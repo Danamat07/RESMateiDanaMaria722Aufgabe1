@@ -41,14 +41,14 @@ public class App {
                 System.out.println(ninja);
             }
 
-            // b) filter ninjas by punkte given from user
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Please enter punkte: ");
-            int punkte = Integer.parseInt(scanner.nextLine());
-            List<Ninja> ninjaList = filterNinjaByPunkte(ninjas, punkte);
-            for (Ninja n: ninjaList) {
-                System.out.println(n);
-            }
+//            // b) filter ninjas by punkte given from user
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("Please enter punkte: ");
+//            int punkte = Integer.parseInt(scanner.nextLine());
+//            List<Ninja> ninjaList = filterNinjaByPunkte(ninjas, punkte);
+//            for (Ninja n: ninjaList) {
+//                System.out.println(n);
+//            }
 
             saveToJsonFile(ninjas, outputFile);
 
