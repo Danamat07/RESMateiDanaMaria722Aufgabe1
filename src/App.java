@@ -23,7 +23,7 @@ public class App {
     public static void main(String[] args) {
 
         String inputFile = "src/ninja_events.json";
-        String outputFile = "src/ninja_events.json";
+        String outputFile = "src/gesammtzahl.json";
 
         try {
             // a) read data from JSON file
