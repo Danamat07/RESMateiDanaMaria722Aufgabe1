@@ -22,6 +22,13 @@ public class App {
         return pkt;
     }
 
+    private static void saveToJsonFile(List<Ninja> ninjas, String outputFile) throws IOException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
+        gson.toJson(ninjas, bufferedWriter);
+        bufferedWriter.close();
+    }
+
     public static void main(String[] args) {
 
         String inputFile = "src/ninja_events.json";
@@ -42,6 +49,8 @@ public class App {
             for (Ninja n: ninjaList) {
                 System.out.println(n);
             }
+
+            saveToJsonFile(ninjas, outputFile);
 
 
         } catch(IOException exception){
