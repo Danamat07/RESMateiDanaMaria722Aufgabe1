@@ -13,11 +13,13 @@ public class App {
         return ninjas;
     }
 
-    private static void filterNinjaByPunkte(List<Ninja> ninjas, int punkte) {
+    private static List<Ninja> filterNinjaByPunkte(List<Ninja> ninjas, int punkte) {
+        List<Ninja> pkt = new ArrayList<>();
         for (Ninja ninja : ninjas) {
             if (ninja.getKraftpunkte() >= punkte)
-                System.out.println(ninja.getKraftpunkte());
+                pkt.add(ninja);
         }
+        return pkt;
     }
 
     public static void main(String[] args) {
@@ -36,7 +38,10 @@ public class App {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Please enter punkte: ");
             int punkte = Integer.parseInt(scanner.nextLine());
-            filterNinjaByPunkte(ninjas, punkte);
+            List<Ninja> ninjaList = filterNinjaByPunkte(ninjas, punkte);
+            for (Ninja n: ninjaList) {
+                System.out.println(n);
+            }
 
 
         } catch(IOException exception){
